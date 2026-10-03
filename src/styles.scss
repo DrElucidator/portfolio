@@ -1,2 +1,15 @@
-@use 'bootstrap';
+$cor-primaria: #090c11;
+$cor-secundaria: #c8a959;
+$fonte-padrao: Georgia, 'Times New Roman', serif;
+
+@use 'bootstrap/scss/bootstrap' with (
+    $primary: $cor-primaria,
+    $secondary: $cor-secundaria,
+    $font-family-base: $fonte-padrao,
+    $font-family-sans-serif: $fonte-padrao,
+);
 @use 'bootstrap-icons';
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+}
