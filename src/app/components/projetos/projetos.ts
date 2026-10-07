@@ -56,14 +56,27 @@ export class Projetos {
       titulo: 'Gerador de Provas',
       descricao:
         'A aplicação organiza disciplinas, matérias e questões para permitir a criação de testes personalizados. Os testes podem ser gerados com questões selecionadas aleatoriamente, duplicados e exportados em PDF junto com seus respectivos gabaritos.',
-      urlImagem: '/img/img.png',
+      urlImagem: '',
       urlRepositorio: 'https://github.com/WriteLine-GreenLife-Devs/gerador-de-provas-2026',
+      tecnologias: ['HTML', 'CSS', 'C#', '.NET 10', 'Entity Framework'],
+    },
+    {
+      titulo: 'Controle de Bar',
+      descricao:
+        'Sistema web multi-tenant para gerenciamento de bares, com controle de mesas, garçons, produtos, contas e pedidos. A aplicação calcula os valores das contas, acompanha o faturamento por período e mantém os dados isolados por estabelecimento.',
+      urlImagem: '/img/projects/controle-de-bar/controle-de-bar.gif',
+      urlRepositorio: 'https://github.com/WriteLine-GreenLife-Devs/controle-de-bar-2026',
       tecnologias: [
-        'HTML',
-        'CSS', 
-        'C#', 
-        '.NET 10', 
-        'Entity Framework'
+        'C#',
+        '.NET 10',
+        'ASP.NET Core MVC',
+        'Entity Framework Core',
+        'SQL Server',
+        'ASP.NET Core Identity',
+        'Bootstrap',
+        'MSTest',
+        'Playwright',
+        'Azure',
       ],
     },
   ];

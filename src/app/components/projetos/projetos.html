@@ -32,7 +32,7 @@
               <div class="d-flex flex-wrap gap-2 ms-auto">
                 @if (projeto.urlImagem) {
                   <button
-                    (click)="projetoSelecionado.set(undefined)"
+                    (click)="projetoSelecionado.set(projeto)"
                     type="button"
                     data-bs-toggle="modal"
                     data-bs-target="#ProjectModal"
