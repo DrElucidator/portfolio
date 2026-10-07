@@ -11,11 +11,9 @@
     <ol>
       @for (projeto of projetos; track projeto.titulo; let indice = $index) {
         <li class="d-flex align-items-start gap-4 border-bottom border-dark-subtle py-4">
-          <span
-            class="fs-1 fw-medium fst-italic"
-            aria-hidden="true"
-            >{{ (indice + 1).toString().padStart(2, '0') }}</span
-          >
+          <span class="fs-1 fw-medium fst-italic" aria-hidden="true">{{
+            (indice + 1).toString().padStart(2, '0')
+          }}</span>
 
           <article class="d-flex flex-column gap-3 flex-grow-1 pt-3">
             <h3 class="fs-2 fw-medium fst-italic text-secondary">{{ projeto.titulo }}</h3>
@@ -34,7 +32,10 @@
               <div class="d-flex flex-wrap gap-2 ms-auto">
                 @if (projeto.urlImagem) {
                   <button
+                    (click)="projetoSelecionado.set(undefined)"
                     type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#ProjectModal"
                     class="btn btn-outline-dark rounded-pill d-inline-flex align-items-center gap-2"
                   >
                     <i class="bi bi-image"></i>
@@ -61,3 +62,8 @@
     </ol>
   </article>
 </section>
+
+<app-modal-projeto
+  [projeto]="projetoSelecionado()"
+  (modalFechado)="projetoSelecionado.set(undefined)"
+></app-modal-projeto>
