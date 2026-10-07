@@ -70,6 +70,14 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://DrElucidator.github.io/portfolio/",
+            "name": "DrElucidator",
+            "email": "dr.elucidator@gmail.com"
+          }
         }
       }
     }
