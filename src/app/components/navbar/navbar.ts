@@ -1,16 +1,6 @@
 import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
-import { Idioma, IdiomaService, TextoLocalizado } from '../../shared/idioma.service';
-
-interface ItemNavbar {
-  titulo: TextoLocalizado;
-  url: string;
-  icone: string;
-}
-
-interface OpcaoIdioma {
-  codigo: Idioma;
-  nome: string;
-}
+import { Idioma, IdiomaService } from '../../shared/idioma.service';
+import { idiomas, itensNavbar } from './navbar.content';
 
 @Component({
   imports: [],
@@ -21,28 +11,8 @@ export class Navbar {
   public readonly idioma = inject(IdiomaService);
   public readonly menuIdiomaAberto = signal(false);
 
-  public readonly idiomas: OpcaoIdioma[] = [
-    { codigo: 'pt', nome: 'Português' },
-    { codigo: 'en', nome: 'English' },
-  ];
-
-  public readonly itens: ItemNavbar[] = [
-    {
-      titulo: { pt: 'Sobre', en: 'About' },
-      url: '#sobre',
-      icone: 'bi-person'
-    },
-    {
-      titulo: { pt: 'Habilidades', en: 'Skills' },
-      url: '#habilidades',
-      icone: 'bi-award'
-    },
-    {
-      titulo: { pt: 'Projetos', en: 'Projects' },
-      url: '#projetos',
-      icone: 'bi-card-list'
-    }
-  ];
+  public readonly idiomas = idiomas;
+  public readonly itens = itensNavbar;
 
   public constructor(private readonly elemento: ElementRef<HTMLElement>) {}
 
