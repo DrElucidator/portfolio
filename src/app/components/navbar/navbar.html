@@ -24,6 +24,40 @@
                         {{ item.titulo }}
                     </a>}
             </ul>
+
+            <div class="language-picker ms-lg-3 mt-2 mt-lg-0">
+                <button
+                    class="language-picker__trigger"
+                    type="button"
+                    (click)="alternarMenuIdioma()"
+                    [attr.aria-expanded]="menuIdiomaAberto()"
+                    aria-haspopup="listbox"
+                    aria-label="Selecionar idioma"
+                >
+                    <svg class="language-picker__icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2v3m6 13h7m-3.5-4 4 8m-8 0 4-8" />
+                    </svg>
+                    <b>{{ idiomaAtual() === 'pt' ? 'PT' : 'EN' }}</b>
+                    <svg class="language-picker__chevron" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="m4 6 4 4 4-4" />
+                    </svg>
+                </button>
+
+                <div class="language-picker__menu" role="listbox" [hidden]="!menuIdiomaAberto()">
+                    <small>Idioma</small>
+                    @for (idioma of idiomas; track idioma.codigo) {
+                    <button
+                        type="button"
+                        role="option"
+                        [attr.aria-selected]="idiomaAtual() === idioma.codigo"
+                        (click)="selecionarIdioma(idioma.codigo)"
+                    >
+                        <span>{{ idioma.nome }}</span>
+                        <b>{{ idioma.codigo.toUpperCase() }}</b>
+                    </button>
+                    }
+                </div>
+            </div>
         </div>
     </div>
 </nav>

@@ -47,3 +47,92 @@ section {
   filter: brightness(0.72) contrast(1.08) saturate(0.88)
     drop-shadow(-0.35rem 0.55rem 0.75rem rgba(9, 12, 17, 0.48));
 }
+
+.language-picker {
+  position: relative;
+}
+
+.language-picker__trigger {
+  width: 5.875rem;
+  min-height: 2.375rem;
+  padding: 0.4rem 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid $cor-secundaria;
+  border-radius: 999px;
+  background: transparent;
+  color: $cor-secundaria;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.language-picker__trigger:hover,
+.language-picker__trigger:focus-visible,
+.language-picker__trigger[aria-expanded='true'] {
+  background: $cor-secundaria;
+  color: $cor-primaria;
+  box-shadow: 0 0 0 0.2rem rgba(200, 169, 89, 0.2);
+}
+
+.language-picker__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.language-picker__chevron {
+  width: 0.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.language-picker__menu {
+  position: absolute;
+  z-index: 1050;
+  top: calc(100% + 0.625rem);
+  right: 0;
+  width: 11.875rem;
+  padding: 0.55rem;
+  border: 1px solid rgba(200, 169, 89, 0.55);
+  border-radius: 0.75rem;
+  background: $cor-primaria;
+  box-shadow: 0 1.125rem 2.75rem rgba(0, 0, 0, 0.28);
+}
+
+.language-picker__menu small {
+  display: block;
+  padding: 0.375rem 0.625rem 0.55rem;
+  color: $cor-secundaria;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.language-picker__menu button {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.language-picker__menu button:hover,
+.language-picker__menu button:focus-visible,
+.language-picker__menu button[aria-selected='true'] {
+  background: rgba(200, 169, 89, 0.15);
+  color: $cor-secundaria;
+}
