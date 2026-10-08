@@ -1,20 +1,29 @@
 <section id="habilidades" class="mt-3 mt-lg-0">
   <div class="container mt-4">
-    <h2 class="display-5 fw-medium fst-italic text-center text-secondary">Habilidades</h2>
+    <h2 class="display-5 fw-medium fst-italic text-center text-secondary">
+      {{ textos[idioma.atual()].titulo }}
+    </h2>
 
     <p class="mt-5 fs-5 text-center">
-      Aqui estão as principais tecnologias e práticas que aplico no desenvolvimento de aplicações.
+      {{ textos[idioma.atual()].introducao }}
     </p>
 
     <ul class="list-unstyled row row-cols-1 row-cols-lg-2 gx-5 gy-4 mt-5">
       @for (habilidade of habilidades; track habilidade.titulo) {
         <li class="col">
           <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
-            <img width="64" height="64" [src]="habilidade.imagem" [alt]="habilidade.titulo" />
+            <img
+              width="64"
+              height="64"
+              [src]="habilidade.imagem"
+              [alt]="habilidade.titulo[idioma.atual()]"
+            />
 
             <div>
-              <h3 class="fs-4 fw-medium fst-italic text-secondary-emphasis">{{ habilidade.titulo }}</h3>
-              <p class="fs-5 mb-0">{{ habilidade.descricao }}</p>
+              <h3 class="fs-4 fw-medium fst-italic text-secondary-emphasis">
+                {{ habilidade.titulo[idioma.atual()] }}
+              </h3>
+              <p class="fs-5 mb-0">{{ habilidade.descricao[idioma.atual()] }}</p>
             </div>
           </article>
         </li>
