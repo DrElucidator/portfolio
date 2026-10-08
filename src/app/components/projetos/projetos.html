@@ -1,11 +1,11 @@
 <section id="projetos" class="bg-light text-dark">
   <article class="container d-flex flex-column my-5">
-    <h2 class="display-5 fw-medium fst-italic text-center text-secondary">Projetos</h2>
+    <h2 class="display-5 fw-medium fst-italic text-center text-secondary">
+      {{ textos[idioma.atual()].titulo }}
+    </h2>
 
     <p class="mt-5 fs-5 text-center">
-      Nesta seção, apresento projetos que refletem minha experiência e minhas habilidades como
-      desenvolvedor. Cada item reúne uma descrição detalhada, as tecnologias utilizadas e os links
-      para visualizar a imagem do projeto ou acessar o código-fonte.
+      {{ textos[idioma.atual()].introducao }}
     </p>
 
     <ol>
@@ -16,12 +16,17 @@
           }}</span>
 
           <article class="d-flex flex-column gap-3 flex-grow-1 pt-3">
-            <h3 class="fs-2 fw-medium fst-italic text-secondary">{{ projeto.titulo }}</h3>
+            <h3 class="fs-2 fw-medium fst-italic text-secondary">
+              {{ projeto.titulo[idioma.atual()] }}
+            </h3>
 
-            <p class="fs-5 mb-0">{{ projeto.descricao }}</p>
+            <p class="fs-5 mb-0">{{ projeto.descricao[idioma.atual()] }}</p>
 
             <div class="d-flex flex-wrap align-items-center gap-3 mt-3">
-              <div class="d-flex flex-wrap gap-2" aria-label="Tecnologias utilizadas">
+              <div
+                class="d-flex flex-wrap gap-2"
+                [attr.aria-label]="textos[idioma.atual()].tecnologias"
+              >
                 @for (tecnologia of projeto.tecnologias; track tecnologia) {
                   <span class="badge rounded-pill border border-light-subtle text-dark">
                     {{ tecnologia }}
@@ -39,7 +44,7 @@
                     class="btn btn-outline-dark rounded-pill d-inline-flex align-items-center gap-2"
                   >
                     <i class="bi bi-image"></i>
-                    Ver Imagem
+                    {{ textos[idioma.atual()].imagem }}
                   </button>
                 }
 
@@ -51,7 +56,7 @@
                     class="btn btn-outline-dark rounded-pill d-inline-flex align-items-center gap-2"
                   >
                     <i class="bi bi-github"></i>
-                    Repositório
+                    {{ textos[idioma.atual()].repositorio }}
                   </a>
                 }
               </div>
@@ -65,5 +70,6 @@
 
 <app-modal-projeto
   [projeto]="projetoSelecionado()"
+  [idioma]="idioma.atual()"
   (modalFechado)="projetoSelecionado.set(undefined)"
 ></app-modal-projeto>

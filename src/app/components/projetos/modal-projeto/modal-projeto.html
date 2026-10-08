@@ -8,14 +8,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="ProjectModalLabel">{{ projeto()?.titulo }}</h1>
+        <h1 class="modal-title fs-5" id="ProjectModalLabel">{{ projeto()?.titulo?.[idioma()] }}</h1>
         <button (click)="modalFechado.emit()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <img
           class="img-fluid"
           [src]="projeto()?.urlImagem"
-          [alt]="projeto()?.titulo"
+          [alt]="projeto()?.titulo?.[idioma()]"
         />
       </div>
     </div>
