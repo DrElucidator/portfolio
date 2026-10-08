@@ -21,7 +21,7 @@
                 <li class="nav-item">
                     <a class="nav-link fs-6" aria-current="page" [href]="item.url">
                         <i class="bi {{ item.icone }}"></i>
-                        {{ item.titulo }}
+                        {{ item.titulo[idioma.atual()] }}
                     </a>}
             </ul>
 
@@ -37,23 +37,23 @@
                     <svg class="language-picker__icon" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2v3m6 13h7m-3.5-4 4 8m-8 0 4-8" />
                     </svg>
-                    <b>{{ idiomaAtual() === 'pt' ? 'PT' : 'EN' }}</b>
+                    <b>{{ idioma.atual().toUpperCase() }}</b>
                     <svg class="language-picker__chevron" viewBox="0 0 16 16" aria-hidden="true">
                         <path d="m4 6 4 4 4-4" />
                     </svg>
                 </button>
 
                 <div class="language-picker__menu" role="listbox" [hidden]="!menuIdiomaAberto()">
-                    <small>Idioma</small>
-                    @for (idioma of idiomas; track idioma.codigo) {
+                    <small>{{ idioma.atual() === 'pt' ? 'Idioma' : 'Language' }}</small>
+                    @for (opcaoIdioma of idiomas; track opcaoIdioma.codigo) {
                     <button
                         type="button"
                         role="option"
-                        [attr.aria-selected]="idiomaAtual() === idioma.codigo"
-                        (click)="selecionarIdioma(idioma.codigo)"
+                        [attr.aria-selected]="idioma.atual() === opcaoIdioma.codigo"
+                        (click)="selecionarIdioma(opcaoIdioma.codigo)"
                     >
-                        <span>{{ idioma.nome }}</span>
-                        <b>{{ idioma.codigo.toUpperCase() }}</b>
+                        <span>{{ opcaoIdioma.nome }}</span>
+                        <b>{{ opcaoIdioma.codigo.toUpperCase() }}</b>
                     </button>
                     }
                 </div>

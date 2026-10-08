@@ -3,24 +3,22 @@
     <div class="row align-items-center g-3">
       <div class="col-lg-7 order-1 order-lg-0">
         <div>
-          <p class="display-5 mb-1">Olá, sou <strong class="fw-bold">Alec Luí</strong>!</p>
+          <p class="display-5 mb-1">{{ textos[idioma.atual()].saudacao }} <strong class="fw-bold">Alec Luí</strong>!</p>
           <span class="display-3 fw-bold fst-italic sobre-banner-text"
-            >Desenvolvedor FullStack</span
+            >{{ textos[idioma.atual()].cargo }}</span
           >
         </div>
 
         <div class="mt-4">
           <p class="fs-5">
-            Crio soluções digitais <strong class="sobre-banner-text">claras, úteis e bem construídas</strong>. 
-            Com postura versátil diante de novos desafios, busco entender o problema previamente para escolher 
-            a ferramenta adequada para desenvolver experiências que façam sentido para quem utilizá-las.
+            {{ textos[idioma.atual()].introducao }} <strong class="sobre-banner-text">{{ textos[idioma.atual()].destaque }}</strong>{{ textos[idioma.atual()].conclusao }}
           </p>
         </div>
 
         <div class="d-flex flex-wrap align-items-center gap-3 fs-5">
           <span class="d-flex align-items-center">
             <i class="bi bi-geo-alt fs-5 sobre-banner-text"></i>
-            Curitiba, PR - Brasil
+            Curitiba, PR - {{ textos[idioma.atual()].pais }}
           </span>
 
           <span>-</span>
@@ -45,7 +43,7 @@
       </div>
 
       <div class="col mx-auto sobre-banner-img">
-        <img class="img-fluid mt-0" src="img/profile-alec-lui.png" alt="Foto de Alec Luí" />
+        <img class="img-fluid mt-0" src="img/profile-alec-lui.png" [alt]="textos[idioma.atual()].fotoAlternativa" />
       </div>
     </div>
   </div>

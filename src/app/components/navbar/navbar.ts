@@ -1,12 +1,11 @@
-import { Component, ElementRef, HostListener, signal } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
+import { Idioma, IdiomaService, TextoLocalizado } from '../../shared/idioma.service';
 
 interface ItemNavbar {
-  titulo: string;
+  titulo: TextoLocalizado;
   url: string;
   icone: string;
 }
-
-type Idioma = 'pt' | 'en';
 
 interface OpcaoIdioma {
   codigo: Idioma;
@@ -19,7 +18,7 @@ interface OpcaoIdioma {
   templateUrl: './navbar.html',
 })
 export class Navbar {
-  public readonly idiomaAtual = signal<Idioma>(this.obterIdiomaInicial());
+  public readonly idioma = inject(IdiomaService);
   public readonly menuIdiomaAberto = signal(false);
 
   public readonly idiomas: OpcaoIdioma[] = [
@@ -29,17 +28,17 @@ export class Navbar {
 
   public readonly itens: ItemNavbar[] = [
     {
-      titulo: 'Sobre',
+      titulo: { pt: 'Sobre', en: 'About' },
       url: '#sobre',
       icone: 'bi-person'
     },
     {
-      titulo: 'Habilidades',
+      titulo: { pt: 'Habilidades', en: 'Skills' },
       url: '#habilidades',
       icone: 'bi-award'
     },
     {
-      titulo: 'Projetos',
+      titulo: { pt: 'Projetos', en: 'Projects' },
       url: '#projetos',
       icone: 'bi-card-list'
     }
@@ -48,8 +47,7 @@ export class Navbar {
   public constructor(private readonly elemento: ElementRef<HTMLElement>) {}
 
   public selecionarIdioma(idioma: Idioma): void {
-    this.idiomaAtual.set(idioma);
-    window.localStorage.setItem('portfolio-idioma', idioma);
+    this.idioma.selecionar(idioma);
     this.menuIdiomaAberto.set(false);
   }
 
@@ -69,13 +67,4 @@ export class Navbar {
     this.menuIdiomaAberto.set(false);
   }
 
-  private obterIdiomaInicial(): Idioma {
-    const idiomaSalvo = window.localStorage.getItem('portfolio-idioma');
-
-    if (idiomaSalvo === 'pt' || idiomaSalvo === 'en') {
-      return idiomaSalvo;
-    }
-
-    return 'pt';
-  }
 }
