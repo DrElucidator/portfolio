@@ -9,7 +9,7 @@
     </p>
 
     <ol>
-      @for (projeto of projetos; track projeto.titulo; let indice = $index) {
+      @for (projeto of projetos; track projeto.urlRepositorio; let indice = $index) {
         <li class="d-flex align-items-start gap-4 border-bottom border-dark-subtle py-4">
           <span class="fs-1 fw-medium fst-italic" aria-hidden="true">{{
             (indice + 1).toString().padStart(2, '0')
