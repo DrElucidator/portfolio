@@ -63,7 +63,7 @@ export class Projetos {
     {
       titulo: 'e-Agenda API',
       descricao:
-        'API para centralizar a rotina pessoal, reunindo contatos, compromissos, tarefas, despesas e categorias em uma estrutura modular, pronta para integrar diferentes interfaces.',
+        'API de agenda para centralizar contatos, compromissos, tarefas e despesas em uma solução organizada por módulos.',
       urlImagem: '',
       urlRepositorio: 'https://github.com/WriteLine-GreenLife-Devs/e-agenda-api',
       tecnologias: ['C#', '.NET', 'ASP.NET Core', 'Web API'],
