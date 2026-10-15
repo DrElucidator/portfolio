@@ -4,6 +4,8 @@ export interface Projeto {
   titulo: TextoLocalizado;
   descricao: TextoLocalizado;
   urlImagem: string;
+  urlSite?: string;
+  rotuloSite?: TextoLocalizado;
   urlRepositorio: string;
   tecnologias: string[];
 }
@@ -45,6 +47,18 @@ export const textosProjetos = {
 };
 
 export const projetos: Projeto[] = [
+  {
+    titulo: { pt: 'Pokédex', en: 'Pokédex' },
+    descricao: {
+      pt: 'Aplicação web responsiva para explorar informações de Pokémon, desenvolvida com componentes e recursos do ecossistema Angular.',
+      en: 'Responsive web application for exploring Pokémon information, built with components and tools from the Angular ecosystem.',
+    },
+    urlImagem: '',
+    urlSite: 'https://drelucidator.github.io/Pokedex/',
+    rotuloSite: { pt: 'Explorar Pokédex', en: 'Explore Pokédex' },
+    urlRepositorio: 'https://github.com/DrElucidator/Pokedex',
+    tecnologias: ['Angular', 'TypeScript', 'Bootstrap', 'RxJS'],
+  },
   projeto(
     'OCR Bancário',
     'Banking OCR',

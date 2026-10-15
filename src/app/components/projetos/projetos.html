@@ -35,7 +35,17 @@
               </div>
 
               <div class="d-flex flex-wrap gap-2 ms-auto">
-                @if (projeto.urlImagem) {
+                @if (projeto.urlSite && projeto.rotuloSite) {
+                  <a
+                    [href]="projeto.urlSite"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-dark rounded-pill d-inline-flex align-items-center gap-2"
+                  >
+                    <i class="bi bi-box-arrow-up-right"></i>
+                    {{ projeto.rotuloSite[idioma.atual()] }}
+                  </a>
+                } @else if (projeto.urlImagem) {
                   <button
                     (click)="projetoSelecionado.set(projeto)"
                     type="button"
