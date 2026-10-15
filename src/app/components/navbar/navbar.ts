@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
 import { Idioma, IdiomaService } from '../../shared/idioma.service';
-import { idiomas, itensNavbar } from './navbar.content';
+import { idiomas, itensNavbar, textosNavbar } from './navbar.content';
 
 @Component({
   imports: [],
@@ -13,6 +13,7 @@ export class Navbar {
 
   public readonly idiomas = idiomas;
   public readonly itens = itensNavbar;
+  public readonly textos = textosNavbar;
 
   public constructor(private readonly elemento: ElementRef<HTMLElement>) {}
 

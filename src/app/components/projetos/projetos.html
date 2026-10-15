@@ -71,5 +71,6 @@
 <app-modal-projeto
   [projeto]="projetoSelecionado()"
   [idioma]="idioma.atual()"
+  [textoFechar]="textos[idioma.atual()].fechar"
   (modalFechado)="projetoSelecionado.set(undefined)"
 ></app-modal-projeto>

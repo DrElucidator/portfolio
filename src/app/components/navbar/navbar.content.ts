@@ -20,3 +20,20 @@ export const idiomas: OpcaoIdioma[] = [
   { codigo: 'pt', nome: 'Português' },
   { codigo: 'en', nome: 'English' },
 ];
+
+export const textosNavbar: Record<Idioma, {
+  alternarNavegacao: string;
+  selecionarIdioma: string;
+  tituloMenuIdioma: string;
+}> = {
+  pt: {
+    alternarNavegacao: 'Alternar navegação',
+    selecionarIdioma: 'Selecionar idioma',
+    tituloMenuIdioma: 'Idioma',
+  },
+  en: {
+    alternarNavegacao: 'Toggle navigation',
+    selecionarIdioma: 'Select language',
+    tituloMenuIdioma: 'Language',
+  },
+};

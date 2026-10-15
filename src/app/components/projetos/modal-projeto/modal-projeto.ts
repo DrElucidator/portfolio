@@ -14,6 +14,7 @@ interface ProjetoSelecionado {
 export class ModalProjeto {
   public readonly projeto = input.required<ProjetoSelecionado | undefined>();
   public readonly idioma = input.required<Idioma>();
+  public readonly textoFechar = input.required<string>();
 
   public readonly modalFechado = output<void>();
 }

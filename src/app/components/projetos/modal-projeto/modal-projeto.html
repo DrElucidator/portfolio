@@ -9,7 +9,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="ProjectModalLabel">{{ projeto()?.titulo?.[idioma()] }}</h1>
-        <button (click)="modalFechado.emit()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          (click)="modalFechado.emit()"
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          [attr.aria-label]="textoFechar()"
+        ></button>
       </div>
       <div class="modal-body">
         <img
