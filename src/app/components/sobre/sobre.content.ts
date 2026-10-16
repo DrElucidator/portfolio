@@ -14,7 +14,7 @@ export const textosSobre: Record<
 > = {
   pt: {
     saudacao: 'Olá, sou',
-    cargo: 'Desenvolvedor Full Stack',
+    cargo: 'Desenvolvedor Full\u00A0Stack',
     introducao: 'Crio soluções digitais',
     destaque: 'claras, úteis e bem construídas',
     conclusao:
@@ -24,7 +24,7 @@ export const textosSobre: Record<
   },
   en: {
     saudacao: 'Hello, I’m',
-    cargo: 'Full Stack Developer',
+    cargo: 'Full\u00A0Stack Developer',
     introducao: 'I build',
     destaque: 'clear, useful, and well-crafted',
     conclusao:
