@@ -30,11 +30,12 @@ section {
   position: relative;
   flex: 0 0 auto;
   width: clamp(13.2rem, 26.4vw, 16.8rem);
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 4.22;
   margin-inline: auto;
+  transform: translateY(-0.6rem);
   overflow: hidden;
   background: linear-gradient(145deg, #c8a959, #ffecbd);
-  border-radius: 50% 48% 44% 56% / 42% 32% 64% 58%;
+  border-radius: 50% 50% 44% 56% / 36% 36% 64% 58%;
 }
 
 .sobre-banner-img img {
