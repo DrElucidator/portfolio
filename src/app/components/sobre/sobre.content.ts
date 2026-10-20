@@ -28,7 +28,7 @@ export const textosSobre: Record<
     introducao: 'I build',
     destaque: 'clear, useful, and well-crafted',
     conclusao:
-      'digital solutions. With a versatile approach to new challenges, I first seek to understand the problem, then choose the right tools to create experiences that genuinely work for the people using them.',
+      ' digital solutions. With a versatile approach to new challenges, I first seek to understand the problem, then choose the right tools to create experiences that genuinely work for the people using them.',
     pais: 'Brazil',
     fotoAlternativa: 'Photo of Alec Luí',
   },
