@@ -4,22 +4,21 @@
         <button
             class="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
             aria-controls="navbarNav"
-            aria-expanded="false"
+            [attr.aria-expanded]="navegacaoAberta()"
             [attr.aria-label]="textos[idioma.atual()].alternarNavegacao"
+            (click)="alternarNavegacao()"
         >
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" [class.show]="navegacaoAberta()" id="navbarNav">
             <span class="ms-auto"></span>
 
             <ul class="navbar-nav">
                 @for (item of itens; track $index) {
                 <li class="nav-item">
-                    <a class="nav-link fs-6" aria-current="page" [href]="item.url">
+                    <a class="nav-link fs-6" aria-current="page" [href]="item.url" (click)="fecharNavegacao()">
                         <i class="bi {{ item.icone }}"></i>
                         {{ item.titulo[idioma.atual()] }}
                     </a>}

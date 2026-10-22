@@ -1,29 +1,25 @@
-<div
-  class="modal modal-xl fade"
-  id="ProjectModal"
-  tabindex="-1"
-  aria-labelledby="ProjectModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="ProjectModalLabel">{{ projeto()?.titulo?.[idioma()] }}</h1>
-        <button
-          (click)="modalFechado.emit()"
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          [attr.aria-label]="textoFechar()"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <img
-          class="img-fluid"
-          [src]="projeto()?.urlImagem"
-          [alt]="projeto()?.titulo?.[idioma()]"
-        />
+@if (projeto()) {
+  <div class="modal d-block" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="ProjectModalLabel">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="ProjectModalLabel">{{ projeto()?.titulo?.[idioma()] }}</h1>
+          <button
+            (click)="fechar()"
+            type="button"
+            class="btn-close"
+            [attr.aria-label]="textoFechar()"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <img
+            class="img-fluid"
+            [src]="projeto()?.urlImagem"
+            [alt]="projeto()?.titulo?.[idioma()]"
+          />
+        </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="modal-backdrop fade show"></div>
+}

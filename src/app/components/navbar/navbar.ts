@@ -10,6 +10,7 @@ import { idiomas, itensNavbar, textosNavbar } from './navbar.content';
 export class Navbar {
   public readonly idioma = inject(IdiomaService);
   public readonly menuIdiomaAberto = signal(false);
+  public readonly navegacaoAberta = signal(false);
 
   public readonly idiomas = idiomas;
   public readonly itens = itensNavbar;
@@ -24,6 +25,14 @@ export class Navbar {
 
   public alternarMenuIdioma(): void {
     this.menuIdiomaAberto.update((aberto) => !aberto);
+  }
+
+  public alternarNavegacao(): void {
+    this.navegacaoAberta.update((aberta) => !aberta);
+  }
+
+  public fecharNavegacao(): void {
+    this.navegacaoAberta.set(false);
   }
 
   @HostListener('document:click', ['$event'])

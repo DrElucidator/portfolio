@@ -17,10 +17,14 @@ const projeto = (
   urlRepositorio: string,
   tecnologias: string[],
   urlImagem = '',
+  urlSite?: string,
+  rotuloSite?: TextoLocalizado,
 ): Projeto => ({
   titulo: { pt: tituloPt, en: tituloEn },
   descricao: { pt: descricaoPt, en: descricaoEn },
   urlImagem,
+  urlSite,
+  rotuloSite,
   urlRepositorio,
   tecnologias,
 });
@@ -70,12 +74,14 @@ export const projetos: Projeto[] = [
   projeto(
     'Gerador de Certificados Online',
     'Online Certificate Generator',
-    'A aplicação permite cadastrar cursos e alunos, gerar certificados em lote de forma assíncrona e acompanhar o processamento dos certificados.',
-    'Registers courses and students, generates certificates asynchronously in batches, and tracks their processing.',
+    'Plataforma web completa para cadastrar cursos e alunos, solicitar a geração assíncrona de certificados em lote, acompanhar o processamento e baixar os documentos gerados.',
+    'Complete web platform for registering courses and students, requesting asynchronous batch certificate generation, tracking processing, and downloading the generated documents.',
     'https://github.com/WriteLine-GreenLife-Devs/gerador-de-certificados',
     [
       'C#',
       '.NET 10',
+      'Angular',
+      'Tailwind CSS',
       'Entity Framework',
       'ASP.NET Core',
       'MassTransit',
@@ -83,6 +89,9 @@ export const projetos: Projeto[] = [
       'SQL Server',
       'JWT',
     ],
+    '',
+    'https://gerador-de-certificados-api-cehwdfahhbhsbdeh.canadacentral-01.azurewebsites.net/',
+    { pt: 'Acessar aplicação', en: 'Open application' },
   ),
   projeto(
     'Delivery App',
