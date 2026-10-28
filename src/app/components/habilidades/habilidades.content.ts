@@ -1,7 +1,8 @@
 import { TextoLocalizado } from '../../shared/idioma.service';
 
 export interface Habilidade {
-  imagem: string;
+  imagem?: string;
+  icone?: string;
   titulo: TextoLocalizado;
   descricao: TextoLocalizado;
 }
@@ -60,6 +61,14 @@ export const habilidades: Habilidade[] = [
     },
   },
   {
+    imagem: 'https://skillicons.dev/icons?i=tailwind&theme=dark',
+    titulo: { pt: 'Tailwind CSS', en: 'Tailwind CSS' },
+    descricao: {
+      pt: 'Construção de interfaces responsivas e consistentes com classes utilitárias.',
+      en: 'Building responsive, consistent interfaces with utility-first classes.',
+    },
+  },
+  {
     imagem: 'https://skillicons.dev/icons?i=js&theme=dark',
     titulo: { pt: 'JavaScript', en: 'JavaScript' },
     descricao: {
@@ -108,7 +117,7 @@ export const habilidades: Habilidade[] = [
     },
   },
   {
-    imagem: 'https://skillicons.dev/icons?i=azure&theme=dark',
+    icone: 'bi-database-gear',
     titulo: { pt: 'SQL Server', en: 'SQL Server' },
     descricao: {
       pt: 'Banco de dados relacional para aplicações e APIs.',
@@ -116,7 +125,7 @@ export const habilidades: Habilidade[] = [
     },
   },
   {
-    imagem: 'https://skillicons.dev/icons?i=dotnet&theme=dark',
+    icone: 'bi-diagram-3',
     titulo: { pt: 'Entity Framework Core', en: 'Entity Framework Core' },
     descricao: {
       pt: 'Mapeamento objeto-relacional e acesso a dados com .NET.',
@@ -124,7 +133,7 @@ export const habilidades: Habilidade[] = [
     },
   },
   {
-    imagem: 'https://skillicons.dev/icons?i=dotnet&theme=dark',
+    icone: 'bi-lightning-charge',
     titulo: { pt: 'Dapper', en: 'Dapper' },
     descricao: {
       pt: 'Acesso enxuto e performático a bancos de dados relacionais.',
@@ -140,7 +149,7 @@ export const habilidades: Habilidade[] = [
     },
   },
   {
-    imagem: 'https://skillicons.dev/icons?i=dotnet&theme=dark',
+    icone: 'bi-diagram-3',
     titulo: { pt: 'MassTransit', en: 'MassTransit' },
     descricao: {
       pt: 'Orquestração de mensagens e consumidores em aplicações .NET.',
@@ -156,7 +165,7 @@ export const habilidades: Habilidade[] = [
     },
   },
   {
-    imagem: 'https://skillicons.dev/icons?i=dotnet&theme=dark',
+    icone: 'bi-clipboard2-check',
     titulo: { pt: 'MSTest e Playwright', en: 'MSTest and Playwright' },
     descricao: {
       pt: 'Testes unitários e automatizados para validar regras e fluxos.',
@@ -169,6 +178,14 @@ export const habilidades: Habilidade[] = [
     descricao: {
       pt: 'Versionamento, colaboração e organização do ciclo de desenvolvimento.',
       en: 'Version control, collaboration, and development workflow organization.',
+    },
+  },
+  {
+    imagem: 'https://skillicons.dev/icons?i=githubactions&theme=dark',
+    titulo: { pt: 'GitHub Actions e CI/CD', en: 'GitHub Actions and CI/CD' },
+    descricao: {
+      pt: 'Automação de builds, testes, migrations e deploys a partir do GitHub.',
+      en: 'Automating builds, tests, migrations, and deployments from GitHub.',
     },
   },
   {
@@ -196,7 +213,7 @@ export const habilidades: Habilidade[] = [
     },
   },
   {
-    imagem: 'https://skillicons.dev/icons?i=tensorflow&theme=dark',
+    icone: 'bi-cpu',
     titulo: { pt: 'IA aplicada ao desenvolvimento', en: 'AI-assisted development' },
     descricao: {
       pt: 'Uso de modelos de IA para explorar soluções, estruturar tarefas, revisar código e validar resultados com senso crítico.',
@@ -204,7 +221,7 @@ export const habilidades: Habilidade[] = [
     },
   },
   {
-    imagem: 'https://skillicons.dev/icons?i=postman&theme=dark',
+    icone: 'bi-braces-asterisk',
     titulo: { pt: 'APIs REST e JWT', en: 'REST APIs and JWT' },
     descricao: {
       pt: 'Modelagem de endpoints, integração entre serviços e controle de acesso por autenticação.',
@@ -212,7 +229,7 @@ export const habilidades: Habilidade[] = [
     },
   },
   {
-    imagem: 'https://skillicons.dev/icons?i=postgres&theme=dark',
+    icone: 'bi-bezier2',
     titulo: { pt: 'Modelagem de dados', en: 'Data modeling' },
     descricao: {
       pt: 'Estruturação de entidades, relacionamentos e regras para dados consistentes.',
@@ -220,7 +237,7 @@ export const habilidades: Habilidade[] = [
     },
   },
   {
-    imagem: 'https://skillicons.dev/icons?i=dotnet&theme=dark',
+    icone: 'bi-layers',
     titulo: { pt: 'Arquitetura de software', en: 'Software architecture' },
     descricao: {
       pt: 'Organização por camadas e responsabilidades para aplicações sustentáveis.',

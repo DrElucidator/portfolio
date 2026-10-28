@@ -51,6 +51,28 @@ export const textosProjetos = {
 };
 
 export const projetos: Projeto[] = [
+  projeto(
+    'NoteKeeper',
+    'NoteKeeper',
+    'Workspace completo para organizar notas e categorias com autenticação JWT, sessões persistentes, filtros, arquivamento e publicação integrada no Azure.',
+    'Full-stack workspace for organizing notes and categories with JWT authentication, persisted sessions, filters, archiving, and integrated Azure deployment.',
+    'https://github.com/DrElucidator/NoteKeeper',
+    [
+      'Angular',
+      'TypeScript',
+      'RxJS',
+      'Tailwind CSS',
+      '.NET 10',
+      'ASP.NET Core',
+      'Entity Framework Core',
+      'SQL Server',
+      'JWT',
+      'Azure',
+    ],
+    '',
+    'https://notekeeper-api-aleclui-gegah0huewdxdga6.canadacentral-01.azurewebsites.net/',
+    { pt: 'Acessar aplicação', en: 'Open application' },
+  ),
   {
     titulo: { pt: 'Pokédex', en: 'Pokédex' },
     descricao: {
@@ -353,5 +375,13 @@ export const projetos: Projeto[] = [
     'First C# project, marking the beginning of a learning journey through a console application.',
     'https://github.com/DrElucidator/HelloWorld',
     ['C#', '.NET'],
+  ),
+  projeto(
+    'Exercícios em Portugol',
+    'Portugol Exercises',
+    'Coleção dos primeiros exercícios de lógica, incluindo jogos simples, calculadoras, classificação de triângulos e estruturas de repetição.',
+    'Collection of early programming-logic exercises, including simple games, calculators, triangle classification, and loop structures.',
+    'https://github.com/DrElucidator/exercicios-portugol',
+    ['Portugol', 'Programming Logic'],
   ),
 ];

@@ -12,12 +12,18 @@
       @for (habilidade of habilidades; track habilidade.titulo) {
         <li class="col">
           <article class="d-flex align-items-center gap-4 h-100 border-bottom pb-4">
-            <img
-              width="64"
-              height="64"
-              [src]="habilidade.imagem"
-              [alt]="habilidade.titulo[idioma.atual()]"
-            />
+            @if (habilidade.imagem) {
+              <img
+                width="64"
+                height="64"
+                [src]="habilidade.imagem"
+                [alt]="habilidade.titulo[idioma.atual()]"
+              />
+            } @else {
+              <span class="skill-icon" aria-hidden="true">
+                <i class="bi {{ habilidade.icone }}"></i>
+              </span>
+            }
 
             <div>
               <h3 class="fs-4 fw-medium fst-italic text-secondary-emphasis">

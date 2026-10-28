@@ -80,11 +80,9 @@ section {
 .language-picker__icon {
   width: 1.25rem;
   height: 1.25rem;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.55;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  display: inline-grid;
+  place-items: center;
+  font-size: 1rem;
 }
 
 .language-picker__chevron {
@@ -136,4 +134,22 @@ section {
 .language-picker__menu button[aria-selected='true'] {
   background: rgba(200, 169, 89, 0.15);
   color: $cor-secundaria;
+}
+
+.skill-icon {
+  width: 4rem;
+  height: 4rem;
+  flex: 0 0 4rem;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(200, 169, 89, 0.35);
+  border-radius: 1rem;
+  background: linear-gradient(145deg, #151b25, #090c11);
+  color: $cor-secundaria;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 0.5rem 1.25rem rgba(9, 12, 17, 0.12);
+}
+
+.skill-icon i {
+  font-size: 2rem;
+  line-height: 1;
 }
