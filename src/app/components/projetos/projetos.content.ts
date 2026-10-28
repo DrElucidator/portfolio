@@ -166,7 +166,7 @@ export const projetos: Projeto[] = [
       'Playwright',
       'Azure',
     ],
-    '/img/projects/controle-de-bar/controle-de-bar.gif',
+    'img/projects/controle-de-bar/controle-de-bar.gif',
   ),
   projeto(
     'Gerador de Provas',
