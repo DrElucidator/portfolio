@@ -52,6 +52,14 @@ export const textosProjetos = {
 
 export const projetos: Projeto[] = [
   projeto(
+    'PokerHand',
+    'PokerHand',
+    'Validador de mãos de poker que classifica duas mãos, aplica critérios de desempate, rejeita cartas inválidas ou compartilhadas e informa o vencedor em uma aplicação de Console testada com xUnit.',
+    'Poker-hand validator that classifies two hands, applies tie-break rules, rejects invalid or shared cards, and reports the winner through an xUnit-tested Console application.',
+    'https://github.com/DrElucidator/PokerHand',
+    ['C#', '.NET 10', 'xUnit', 'Console Application', 'Domain Modeling'],
+  ),
+  projeto(
     'NoteKeeper',
     'NoteKeeper',
     'Workspace completo para organizar notas e categorias com autenticação JWT, sessões persistentes, filtros, arquivamento e publicação integrada no Azure.',
